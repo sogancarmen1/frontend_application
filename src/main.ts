@@ -1,14 +1,14 @@
-import './assets/style.css'
+import "./assets/style.css";
 
-import { createApp } from 'vue'
+import { createApp } from "vue";
 
-import App from './App.vue'
+import App from "./App.vue";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from "@fortawesome/fontawesome-svg-core";
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-import router from './router/index'
+import router from "./router/index";
 
 import {
   faUserSecret,
@@ -30,8 +30,15 @@ import {
   faCaretRight,
   faCircleUser,
   faFilter,
-  faSort
-} from '@fortawesome/free-solid-svg-icons'
+  faSort,
+  faCalendar,
+  faXmark,
+  faPenNib,
+  faPaperclip,
+  faEllipsis,
+  faCheck,
+  faLock,
+} from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   faUserSecret,
@@ -53,9 +60,16 @@ library.add(
   faCaretRight,
   faCircleUser,
   faFilter,
-  faSort
-)
+  faSort,
+  faCalendar,
+  faXmark,
+  faPenNib,
+  faPaperclip,
+  faEllipsis,
+  faCheck,
+  faLock
+);
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.component('font-awesome-icon', FontAwesomeIcon).use(router).mount('#app')
+app.component("font-awesome-icon", FontAwesomeIcon).use(router).mount("#app");

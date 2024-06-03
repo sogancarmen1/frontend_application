@@ -4,8 +4,14 @@
   <div class="bg-black/85 h-screen w-16 sm:w-52 pt-4">
     <ul v-for="store in stores" :key="store.nameIcon" class="cursor-pointer">
       <router-link class="" :to="store.nameRoute">
-        <li class="flex hover:bg-white/30 px-3 sm:px-2 sm:mx-4 rounded-md" :title="store.title">
-          <IconView :icon-prop="store.nameIcon" class-prop="text-white flex gap-3 px-2 py-2" />
+        <li
+          class="flex hover:bg-white/30 px-3 sm:px-2 sm:mx-4 rounded-md"
+          :title="store.title"
+        >
+          <IconView
+            :icon-prop="store.nameIcon"
+            class-prop="text-white flex gap-3 px-2 py-2"
+          />
           <span
             class="pt-1 text-white text-base hidden transition ease-in-out duration-500 sm:inline"
             >{{ store.textWithIcon }}</span
@@ -33,7 +39,9 @@
                     : projectAndEquipe.secondeFormFirstNameIcon
                 "
                 class-prop="text-white hidden sm:inline absolute px-2 pb-1 rounded-md w-2 mx-1 hover:bg-black/25"
-                @click="projectAndEquipe.showValue = !projectAndEquipe.showValue"
+                @click="
+                  projectAndEquipe.showValue = !projectAndEquipe.showValue
+                "
               ></IconView>
               <IconView
                 :icon-prop="projectAndEquipe.fourNameIcon"
@@ -60,7 +68,11 @@
                   class="text-white text-base px-5 mt-2 mx-2 rounded-md hover:bg-black/25"
                 >
                   <span class="px-2 rounded bg-blue-500 my-8 mr-1"></span>
-                  {{ project.name.length > 17 ? project.name.slice(0, 10) + '...' : project.name }}
+                  {{
+                    project.name.length > 17
+                      ? project.name.slice(0, 10) + "..."
+                      : project.name
+                  }}
                 </li>
               </ul>
             </div>
@@ -81,15 +93,23 @@
         </ul>
       </div>
       <div class="fixed bottom-4">
-        <hr class="border-opacity-10 border-white sm:border-opacity-10 sm:border-white pb-2" />
-        <ul v-for="content in footerContent" :key="content.firstNameIcon" class="cursor-pointer">
+        <hr
+          class="border-opacity-10 border-white sm:border-opacity-10 sm:border-white pb-2"
+        />
+        <ul
+          v-for="content in footerContent"
+          :key="content.firstNameIcon"
+          class="cursor-pointer"
+        >
           <li class="flex gap-2 hover:bg-white/30 mr-4 rounded-md py-1 px-1">
             <IconView
               :icon-prop="content.firstNameIcon"
               class-prop="text-white"
               :title="content.title"
             ></IconView>
-            <span class="pt-1 text-white text-[12px] hidden sm:inline">{{ content.title }}</span>
+            <span class="pt-1 text-white text-[12px] hidden sm:inline">{{
+              content.title
+            }}</span>
           </li>
         </ul>
       </div>
@@ -98,7 +118,7 @@
 </template>
 
 <script setup lang="ts">
-import { stores, projectsAndEquipe, footerContent } from './sideBar'
-import IconView from '../icons/IconView.vue'
-import { RouterLink } from 'vue-router'
+import { stores, projectsAndEquipe, footerContent } from "./sideBar";
+import IconView from "../icons/IconView.vue";
+import { RouterLink } from "vue-router";
 </script>
