@@ -1,5 +1,14 @@
 import { ref } from "vue";
-
+export const detailOfTask = ref(false);
+export const deleteBackground = ref(false);
+export function showDetailOrNot() {
+  detailOfTask.value = true;
+  deleteBackground.value = true;
+}
+export function hiddenBackgroundAndDetail() {
+  detailOfTask.value = false;
+  deleteBackground.value = false;
+}
 export const nameOfTask = ref("");
 export const showInput = ref(true);
 export const showValueOfInput = ref(false);

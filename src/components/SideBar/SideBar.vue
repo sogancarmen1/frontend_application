@@ -21,7 +21,9 @@
     </ul>
     <hr class="border-white/20 my-4" />
     <div class="flex flex-col justify-between space-x-4">
-      <div class="">
+      <div
+        class="h-[360px] overflow-y-auto scrollbar-thumb-white/30 scrollbar-thin scrollbar-track-transparent"
+      >
         <ul
           v-for="projectAndEquipe in projectsAndEquipe"
           :key="projectAndEquipe.id"
@@ -60,14 +62,20 @@
                 class-prop="hidden sm:inline text-white sm:px-1 sm:ml-8 sm:pb-1 sm:mt-1 sm:rounded-md sm:w-3 sm:h-3 sm:pt-1 sm:absolute sm:inset-y-2 sm:left-32 hover:bg-black/25"
               ></IconView>
             </div>
-            <div v-if="projectAndEquipe.showValue">
-              <ul class="hidden sm:inline">
+            <div v-if="projectAndEquipe.showValue" class="">
+              <ul
+                v-if="Number(projectAndEquipe.listOfProject?.length) > 0"
+                class="hidden sm:inline"
+              >
                 <li
                   v-for="project in projectAndEquipe.listOfProject"
                   :key="project.id"
                   class="text-white text-base px-5 mt-2 mx-2 rounded-md hover:bg-black/25"
                 >
-                  <span class="px-2 rounded bg-blue-500 my-8 mr-1"></span>
+                  <span
+                    v-if="project.disable"
+                    class="px-2 rounded bg-blue-500 my-8 mr-1"
+                  ></span>
                   {{
                     project.name.length > 17
                       ? project.name.slice(0, 10) + "..."
@@ -78,14 +86,14 @@
             </div>
             <div
               v-if="projectAndEquipe.showValue"
-              class="relative cursor-pointer invisible sm:visible"
+              class="relative cursor-pointer invisible sm:visible mx-2"
             >
               <span
-                class="text-white text-sm hover:bg-black/25 mx-2 py-1 absolute pl-2 pr-6 rounded-md"
+                class="text-white text-xs hover:bg-black/25 mx-2 py-2 absolute pl-2 pr-6 rounded-md"
                 >{{ projectAndEquipe.myEspace }}
                 <IconView
                   :icon-prop="projectAndEquipe.thirdNameIcons"
-                  class-prop="text-white w-2 pb-1 px-1 h-2 ml-1 absolute top-[1px] rounded-full hover:bg-black/50"
+                  class-prop="text-white w-2 pb-1 px-1 h-2 ml-1 absolute top-[2px] rounded-full hover:bg-black/50"
                 ></IconView>
               </span>
             </div>

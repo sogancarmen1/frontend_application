@@ -20,7 +20,10 @@
             icon="fa-ellipsis"
           ></font-awesome-icon>
         </div>
-        <div class="hover:rounded hover:bg-slate-50 cursor-pointer">
+        <div
+          @click="hiddenBackgroundAndDetail"
+          class="hover:rounded hover:bg-slate-50 cursor-pointer"
+        >
           <font-awesome-icon class="px-1" icon="xmark"></font-awesome-icon>
         </div>
       </div>
@@ -47,7 +50,11 @@
       <div class="text-sm absolute left-40 my-20 mx-4">
         <ul class="" v-for="detail in details" :key="detail.name">
           <li class="py-2">
-            <span class="font-bold">{{ detail.value }}</span>
+            <span class="font-bold">{{
+              Number(detail.value?.length) > 20
+                ? detail.value?.slice(0, 20) + "..."
+                : detail.value
+            }}</span>
           </li>
         </ul>
       </div>
@@ -65,14 +72,19 @@
         </ul>
       </div>
     </div>
-    <div>
-      <font-awesome-icon icon="fa-circle-info" class=""></font-awesome-icon>
-    </div>
+  </div>
+  <div class="absolute bottom-2 right-[98px]">
+    <font-awesome-icon
+      icon="fa-circle-info"
+      class="text-black/50"
+    ></font-awesome-icon>
+    <span class="px-2 text-sm text-black/50">Information sur une tâche</span>
   </div>
 </template>
 
 <script setup lang="ts">
 import { details } from "./ModalDetail";
+import { hiddenBackgroundAndDetail } from "../ListeTask/ListeTask";
 import { ref } from "vue";
 
 const nameOfTask = ref("Le nom de la tâche ejhdgfyuezdvsyuchgs");

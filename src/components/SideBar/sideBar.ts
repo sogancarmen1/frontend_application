@@ -32,12 +32,54 @@ export const projectsAndEquipe = ref([
     showValue: true,
     listOfProject: [
       {
+        id: 0,
+        name: "",
+        disable: false,
+      },
+      {
         id: 1,
-        name: "mon premier projet",
+        name: "mon deuxieme projet",
+        disable: true,
       },
       {
         id: 2,
-        name: "monprojetdfezfzzz",
+        name: "mon troisieme projet",
+        disable: true,
+      },
+      {
+        id: 3,
+        name: "mon quatirième projet",
+        disable: true,
+      },
+      {
+        id: 4,
+        name: "mon cinquieme projet",
+        disable: true,
+      },
+      {
+        id: 4,
+        name: "mon sixieme projet",
+        disable: true,
+      },
+      {
+        id: 5,
+        name: "mon setpième projet",
+        disable: true,
+      },
+      {
+        id: 6,
+        name: "mon huitieme projet",
+        disable: true,
+      },
+      {
+        id: 7,
+        name: "mon quatirième projet",
+        disable: true,
+      },
+      {
+        id: 8,
+        name: "mon neuvieme projet",
+        disable: true,
       },
     ],
   },

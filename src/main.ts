@@ -38,6 +38,7 @@ import {
   faEllipsis,
   faCheck,
   faLock,
+  faDiagramProject,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -67,7 +68,8 @@ library.add(
   faPaperclip,
   faEllipsis,
   faCheck,
-  faLock
+  faLock,
+  faDiagramProject
 );
 
 const app = createApp(App);

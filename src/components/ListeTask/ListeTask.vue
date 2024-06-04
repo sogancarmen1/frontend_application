@@ -47,7 +47,9 @@
             </div>
             <div>
               <font-awesome-icon
+                @click="showDetailOrNot"
                 v-if="showIconAndBorder"
+                :class="detailOfTask ? 'hidden' : ''"
                 class="rounded mx-2 p-1 hover:bg-slate-200"
                 icon="fa-chevron-right"
               ></font-awesome-icon>
@@ -223,10 +225,17 @@
       </td>
     </tr>
   </table>
-  <modal-detail></modal-detail>
+  <div
+    @click="hiddenBackgroundAndDetail"
+    v-if="deleteBackground"
+    class="border absolute h-full top-[47px] w-full"
+  ></div>
+  <modal-detail v-if="detailOfTask"></modal-detail>
+  <modalside-bar></modalside-bar>
 </template>
 
 <script setup lang="ts">
+import ModalsideBar from "@/components/ModalsideBar/ModalsideBar.vue";
 import ModalDetail from "../ModalDetail/ModalDetail.vue";
 import {
   nameOfTask,
@@ -260,5 +269,10 @@ import {
   notShowWaiting,
   notShowDone,
   notShowCanceled,
+  detailOfTask,
+  showDetailOrNot,
+  hiddenBackgroundAndDetail,
+  deleteBackground,
 } from "./ListeTask";
+import { ref } from "vue";
 </script>
