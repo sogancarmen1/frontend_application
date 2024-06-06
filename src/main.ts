@@ -39,6 +39,7 @@ import {
   faCheck,
   faLock,
   faDiagramProject,
+  faListUl,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -69,7 +70,8 @@ library.add(
   faEllipsis,
   faCheck,
   faLock,
-  faDiagramProject
+  faDiagramProject,
+  faListUl
 );
 
 const app = createApp(App);

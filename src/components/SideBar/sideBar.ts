@@ -19,6 +19,10 @@ export const stores = ref([
   },
 ]);
 
+export function path(value: Number) {
+  return `/project/${value}/list`;
+}
+
 export const projectsAndEquipe = ref([
   {
     id: 1,
@@ -37,48 +41,43 @@ export const projectsAndEquipe = ref([
         disable: false,
       },
       {
-        id: 1,
+        id: "1",
+        name: "mon premier projet",
+        disable: true,
+        tasks: [
+          {
+            id: 1,
+            name: "Tache 1",
+          },
+          {
+            id: 2,
+            name: "Tache 2",
+          },
+        ],
+      },
+      {
+        id: "2",
         name: "mon deuxieme projet",
         disable: true,
       },
       {
-        id: 2,
+        id: "3",
         name: "mon troisieme projet",
         disable: true,
       },
       {
-        id: 3,
-        name: "mon quatirième projet",
+        id: "4",
+        name: "mon quatrieme projet",
         disable: true,
       },
       {
-        id: 4,
+        id: "5",
         name: "mon cinquieme projet",
         disable: true,
       },
       {
-        id: 4,
+        id: "6",
         name: "mon sixieme projet",
-        disable: true,
-      },
-      {
-        id: 5,
-        name: "mon setpième projet",
-        disable: true,
-      },
-      {
-        id: 6,
-        name: "mon huitieme projet",
-        disable: true,
-      },
-      {
-        id: 7,
-        name: "mon quatirième projet",
-        disable: true,
-      },
-      {
-        id: 8,
-        name: "mon neuvieme projet",
         disable: true,
       },
     ],
@@ -87,7 +86,6 @@ export const projectsAndEquipe = ref([
     id: 2,
     firstNameIcon: "fa-caret-down",
     secondeFormFirstNameIcon: "fa-caret-right",
-    secondNameIcon: "fa-chevron-down",
     title: "Equipe",
     myEspace: "Mon espace de travail",
     thirdNameIcons: "fa-chevron-right",
@@ -107,3 +105,34 @@ export const footerContent = ref([
     title: "Information",
   },
 ]);
+
+export const iconAndText = [
+  {
+    icon: "fa-diagram-project",
+    text: "Nouveau projet",
+  },
+  {
+    icon: "fa-list-ul",
+    text: "Parcourir les projets",
+  },
+];
+
+export const iconAndTextPlus = [
+  {
+    icon: "fa-diagram-project",
+    text: "Nouveau projet",
+  },
+];
+
+export const showModalProject = ref(false);
+export const showModalProjectPlus = ref(false);
+
+export function toggleAndHidden() {
+  showModalProjectPlus.value = !showModalProjectPlus.value;
+  showModalProject.value = false;
+}
+
+export function toggleAndHiddenOther() {
+  showModalProject.value = !showModalProject.value;
+  showModalProjectPlus.value = false;
+}

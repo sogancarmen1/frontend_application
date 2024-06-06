@@ -1,8 +1,11 @@
 <template>
-  <div class="w-full">
+  <div @click="toggleModalOfProjetAndPlus" class="w-full">
     <div class="flex gap-0 pb-1">
       <div>
-        <icon-view classProp="text-black h-10 pt-6 mx-4" iconProp="fa-solid fa-circle-user" />
+        <icon-view
+          classProp="text-black h-10 pt-6 mx-4"
+          iconProp="fa-solid fa-circle-user"
+        />
       </div>
       <div class="flex flex-col pt-[20px]">
         <span class="text-base font-bold">Mes Tâches</span>
@@ -29,7 +32,13 @@
 </template>
 
 <script setup lang="ts">
-import IconView from '@/components/icons/IconView.vue'
-import { isSelected, toggleIsSelected, isNotSelected, toggleIsNotSelected } from '@/views/tasks'
-import { RouterLink } from 'vue-router'
+import IconView from "@/components/icons/IconView.vue";
+import {
+  isSelected,
+  toggleIsSelected,
+  isNotSelected,
+  toggleIsNotSelected,
+} from "@/views/tasks";
+import { RouterLink } from "vue-router";
+import { toggleModalOfProjetAndPlus } from "../layouts/topSideBar";
 </script>

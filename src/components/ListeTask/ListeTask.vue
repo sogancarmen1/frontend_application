@@ -231,11 +231,9 @@
     class="border absolute h-full top-[47px] w-full"
   ></div>
   <modal-detail v-if="detailOfTask"></modal-detail>
-  <modalside-bar></modalside-bar>
 </template>
 
 <script setup lang="ts">
-import ModalsideBar from "@/components/ModalsideBar/ModalsideBar.vue";
 import ModalDetail from "../ModalDetail/ModalDetail.vue";
 import {
   nameOfTask,

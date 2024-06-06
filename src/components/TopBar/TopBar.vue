@@ -1,5 +1,7 @@
 <template>
-  <header class="bg-black/85 px-5 sm:px-9 border-b border-opacity-10 border-white">
+  <header
+    class="bg-black/85 px-5 sm:px-9 border-b border-opacity-10 border-white"
+  >
     <div class="flex justify-between py-2">
       <div class="flex gap-2">
         <icon-view
@@ -12,7 +14,10 @@
         <div
           class="flex gap-1 rounded-xl px-1 sm:bg-white/30 sm:border cursor-pointer transition easy-in-out"
         >
-          <icon-view classProp="text-red-300 rounded-full" iconProp="fa-solid fa-circle-plus" />
+          <icon-view
+            classProp="text-red-300 rounded-full"
+            iconProp="fa-solid fa-circle-plus"
+          />
           <span class="hidden text-white sm:inline pt-1 text-base">Créer</span>
         </div>
       </div>
@@ -39,5 +44,5 @@
 </template>
 
 <script setup lang="ts">
-import IconView from '../icons/IconView.vue'
+import IconView from "../icons/IconView.vue";
 </script>
